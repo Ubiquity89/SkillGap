@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup, setPersistence, browserLocalPersistence } from 'firebase/auth';
-import { getAnalytics } from 'firebase/analytics';
 
 // Your Firebase configuration
 const firebaseConfig = {
@@ -15,7 +14,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 
 // Set persistence to local storage so user stays logged in
