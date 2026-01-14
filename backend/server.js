@@ -7,7 +7,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "https://skill-gap-u6ft.vercel.app", "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app", "https://skillgap-analyser.onrender.com"],
+  origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "https://skill-gap-u6ft.vercel.app", "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app", "https://skillgap-analyser.onrender.com", "https://*.vercel.app"],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
