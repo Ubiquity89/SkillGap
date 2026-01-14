@@ -12,7 +12,8 @@ const allowedOrigins = [
   "http://localhost:3002",
   "http://localhost:3003",
   "https://skill-gap-u6ft.vercel.app",
-  "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app"
+  "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app",
+  "https://skill-gap-u6ft-qmuf7hhiy-ubiquity89s-projects.vercel.app"
 ];
 
 app.use(
