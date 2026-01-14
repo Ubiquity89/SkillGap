@@ -1,0 +1,256 @@
+{
+  "IKd0eYyfKUgcIgXwFUoDgI1TePp2": [
+    {
+      "id": "analysis_1768310717220",
+      "userId": "IKd0eYyfKUgcIgXwFUoDgI1TePp2",
+      "email": "ubiquity7001@gmail.com",
+      "resumeId": "resume_1768310672948_edynhvuzq",
+      "jobId": "job_1768232832079_avbp4o5h9",
+      "resumeName": "Ubiquity Sinha Ray (7).pdf",
+      "jobTitle": "MERN stack Developer",
+      "matchScore": 20,
+      "status": "Weak Fit",
+      "matchedSkills": [],
+      "missingSkills": [
+        "docker"
+      ],
+      "extraSkills": [
+        "data science",
+        "material-ui",
+        "javascript",
+        "bootstrap",
+        "rest apis",
+        "tailwind",
+        "node.js",
+        "express",
+        "mongodb",
+        "graphql",
+        "postman",
+        "python",
+        "github",
+        "react",
+        "azure",
+        "java",
+        "html",
+        "api",
+        "vite",
+        "css"
+      ],
+      "skillGapPriority": {
+        "high": [
+          "docker"
+        ],
+        "medium": [],
+        "low": []
+      },
+      "experience": {
+        "required": 0,
+        "found": 0
+      },
+      "atsSuggestions": [
+        "REST APIs",
+        "CI/CD",
+        "Microservices"
+      ],
+      "createdAt": "2026-01-13T13:25:17.220Z"
+    },
+    {
+      "id": "analysis_1768322942373",
+      "userId": "IKd0eYyfKUgcIgXwFUoDgI1TePp2",
+      "email": "ubiquity7001@gmail.com",
+      "resumeId": "resume_1768310672948_edynhvuzq",
+      "jobId": "job_1768232060935_esow5i01y",
+      "resumeName": "Ubiquity Sinha Ray (7).pdf",
+      "jobTitle": "MERN stack Developer",
+      "matchScore": 100,
+      "status": "Strong Fit",
+      "matchedSkills": [
+        "react"
+      ],
+      "missingSkills": [],
+      "extraSkills": [
+        "data science",
+        "material-ui",
+        "javascript",
+        "bootstrap",
+        "rest apis",
+        "tailwind",
+        "node.js",
+        "express",
+        "mongodb",
+        "graphql",
+        "postman",
+        "python",
+        "github",
+        "azure",
+        "java",
+        "html",
+        "api",
+        "vite",
+        "css"
+      ],
+      "skillGapPriority": {
+        "high": [],
+        "medium": [],
+        "low": []
+      },
+      "experience": {
+        "required": 0,
+        "found": 0
+      },
+      "atsSuggestions": [
+        "REST APIs",
+        "CI/CD",
+        "Microservices"
+      ],
+      "createdAt": "2026-01-13T16:49:02.373Z"
+    },
+    {
+      "id": "analysis_1768327232052",
+      "userId": "IKd0eYyfKUgcIgXwFUoDgI1TePp2",
+      "email": "ubiquity7001@gmail.com",
+      "resumeId": "resume_1768310028712_coj8vuuob",
+      "jobId": "job_1768323559447_ajpxc6cwq",
+      "resumeName": "Ubiquity_Sinha_Ray_Full_Stack_Developer_Resume.pdf",
+      "jobTitle": "UI Developer",
+      "matchScore": 47,
+      "status": "Weak Fit",
+      "matchedSkills": [
+        "react"
+      ],
+      "missingSkills": [
+        "figma",
+        "adobe"
+      ],
+      "extraSkills": [
+        "javascript",
+        "typescript",
+        "rest apis",
+        "node.js",
+        "express",
+        "mongodb",
+        "graphql",
+        "python",
+        "git",
+        "api",
+        "jest"
+      ],
+      "skillGapPriority": {
+        "high": [
+          {
+            "name": "figma",
+            "reason": "Collaborative design tool for UI/UX prototyping and design handoff",
+            "impact": "+13% match score"
+          }
+        ],
+        "medium": [],
+        "low": [
+          {
+            "name": "adobe",
+            "reason": "Additional skill that may complement your profile",
+            "impact": "+1% match score"
+          }
+        ]
+      },
+      "experience": {
+        "required": 0,
+        "found": 0
+      },
+      "atsSuggestions": [
+        "Figma"
+      ],
+      "createdAt": "2026-01-13T18:00:32.052Z"
+    },
+    {
+      "id": "analysis_1768364599123",
+      "userId": "IKd0eYyfKUgcIgXwFUoDgI1TePp2",
+      "email": "ubiquity7001@gmail.com",
+      "resumeId": "resume_1768310672948_edynhvuzq",
+      "jobId": "job_1768364467837_c3qbkjbyb",
+      "resumeName": "Ubiquity Sinha Ray (7).pdf",
+      "jobTitle": "Frontend Developer",
+      "matchScore": 63,
+      "status": "Partial Fit",
+      "matchedSkills": [
+        "react",
+        "javascript",
+        "html",
+        "css",
+        "node.js",
+        "rest apis",
+        "graphql"
+      ],
+      "missingSkills": [
+        "typescript",
+        "next.js",
+        "aws",
+        "redux",
+        "zustand",
+        "figma"
+      ],
+      "extraSkills": [
+        "data science",
+        "material-ui",
+        "bootstrap",
+        "tailwind",
+        "express",
+        "mongodb",
+        "postman",
+        "python",
+        "git",
+        "azure",
+        "java",
+        "api",
+        "vite"
+      ],
+      "skillGapPriority": {
+        "high": [
+          {
+            "name": "typescript",
+            "reason": "Type-safe JavaScript that improves code quality and maintainability",
+            "impact": "+20% match score"
+          },
+          {
+            "name": "figma",
+            "reason": "Collaborative design tool for UI/UX prototyping and design handoff",
+            "impact": "+13% match score"
+          }
+        ],
+        "medium": [
+          {
+            "name": "aws",
+            "reason": "Amazon's cloud computing platform for scalable infrastructure",
+            "impact": "+13% match score"
+          }
+        ],
+        "low": [
+          {
+            "name": "next.js",
+            "reason": "Additional skill that may complement your profile",
+            "impact": "+1% match score"
+          },
+          {
+            "name": "redux",
+            "reason": "Additional skill that may complement your profile",
+            "impact": "+1% match score"
+          },
+          {
+            "name": "zustand",
+            "reason": "Additional skill that may complement your profile",
+            "impact": "+1% match score"
+          }
+        ]
+      },
+      "experience": {
+        "required": 0,
+        "found": 0
+      },
+      "atsSuggestions": [
+        "Typescript",
+        "Figma",
+        "Aws"
+      ],
+      "createdAt": "2026-01-14T04:23:19.123Z"
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "IKd0eYyfKUgcIgXwFUoDgI1TePp2": [
+    {
+      "id": "resume_1768310028712_coj8vuuob",
+      "userId": "IKd0eYyfKUgcIgXwFUoDgI1TePp2",
+      "email": "ubiquity7001@gmail.com",
+      "fileName": "Ubiquity_Sinha_Ray_Full_Stack_Developer_Resume.pdf",
+      "uploadType": "file",
+      "skills": [
+        {
+          "name": "javascript"
+        },
+        {
+          "name": "typescript"
+        },
+        {
+          "name": "rest apis"
+        },
+        {
+          "name": "node.js"
+        },
+        {
+          "name": "express"
+        },
+        {
+          "name": "mongodb"
+        },
+        {
+          "name": "restful"
+        },
+        {
+          "name": "graphql"
+        },
+        {
+          "name": "python"
+        },
+        {
+          "name": "github"
+        },
+        {
+          "name": "react"
+        },
+        {
+          "name": "api"
+        },
+        {
+          "name": "jest"
+        },
+        {
+          "name": "git"
+        }
+      ],
+      "normalizedSkills": [
+        "javascript",
+        "typescript",
+        "rest apis",
+        "node.js",
+        "express",
+        "mongodb",
+        "restful",
+        "graphql",
+        "python",
+        "github",
+        "react",
+        "api",
+        "jest",
+        "git"
+      ],
+      "totalExperience": 0,
+      "extractedText": "\n\nUbiquity Sinha Ray\nFull Stack Developer\nExperience Summary:\nFull Stack Developer with 3 years of experience building scalable web applications using React,\nNode.js, and MongoDB. Experienced in REST APIs, authentication, and frontend performance\noptimization.\nTechnical Skills:\n• React (3 years)\n• JavaScript (3 years)\n• Node.js (2.5 years)\n• Express.js (2.5 years)\n• MongoDB (2 years)\n• TypeScript (2 years)\n• REST APIs\n• Git & GitHub\n• Python (1 year)\n• GraphQL (basic)\n• Jest (testing)\nWork Experience:\nSoftware Developer – ABC Tech\nJan 2022 – Present\n• Developed MERN stack applications\n• Built RESTful APIs using Node.js and Express\n• Integrated MongoDB databases\n• Implemented authentication and authorization\n• Improved application performance by 30%\nEducation:\nB.Tech in Computer Science",
+      "createdAt": "2026-01-13T13:13:48.712Z",
+      "updatedAt": "2026-01-13T13:13:48.712Z"
+    },
+    {
+      "id": "resume_1768310672948_edynhvuzq",
+      "userId": "IKd0eYyfKUgcIgXwFUoDgI1TePp2",
+      "email": "ubiquity7001@gmail.com",
+      "fileName": "Ubiquity Sinha Ray (7).pdf",
+      "uploadType": "file",
+      "skills": [
+        {
+          "name": "data science"
+        },
+        {
+          "name": "material-ui"
+        },
+        {
+          "name": "javascript"
+        },
+        {
+          "name": "bootstrap"
+        },
+        {
+          "name": "rest apis"
+        },
+        {
+          "name": "tailwind"
+        },
+        {
+          "name": "node.js"
+        },
+        {
+          "name": "express"
+        },
+        {
+          "name": "mongodb"
+        },
+        {
+          "name": "graphql"
+        },
+        {
+          "name": "postman"
+        },
+        {
+          "name": "python"
+        },
+        {
+          "name": "github"
+        },
+        {
+          "name": "react"
+        },
+        {
+          "name": "azure"
+        },
+        {
+          "name": "java"
+        },
+        {
+          "name": "html"
+        },
+        {
+          "name": "api"
+        },
+        {
+          "name": "vite"
+        },
+        {
+          "name": "css"
+        }
+      ],
+      "normalizedSkills": [
+        "data science",
+        "material-ui",
+        "javascript",
+        "bootstrap",
+        "rest apis",
+        "tailwind",
+        "node.js",
+        "express",
+        "mongodb",
+        "graphql",
+        "postman",
+        "python",
+        "github",
+        "react",
+        "azure",
+        "java",
+        "html",
+        "api",
+        "vite",
+        "css"
+      ],
+      "totalExperience": 0,
+      "extractedText": "\n\nGithub\nSUMMARY\nAspiring Web Developer skilled in MERN stack, REST APIs, modern UI frameworks, and full-stack application\ndevelopment. Strong problem-solving foundation (300+ DSA questions) with experience building dashboards,\nAI tools, and e-commerce workflows. Passionate about clean code, animations, and scalable web solutions.\nDelhi    \n7001501674ubiquity7001@gmail.com\nLeetcode\nLinkedIn\nCodeTracker - Coding Progress Dashboard \nFull-stack dashboard aggregating coding stats from LC, GFG, CF, HR, and CC.\nBuilt API + GraphQL + scraping pipeline for multi-platform data.\nImplemented interactive charts (Chart.js) and responsive UI with React, Vite, MUI, Framer Motion.\nAI Powered Interview Website\nMERN interview system with role-based quizzes, CS/aptitude questions, and AI mock interviews.\nUsed OpenAI API for dynamic question generation and real-time evaluation.\n \nSmartWeather – Weather Forecast Website\nWeather app using OpenWeather API with voice search and location detection.\nAdded clothing suggestions and a clean, responsive interface.\nContentCrafterAI - Repurpose Content\nAI tool to repurpose long content into summaries, posts, captions, etc.\nAutomated multi-format output using custom prompt pipelines and modern\nPersonal Portfolio Website\nResponsive React portfolio with Tailwind/MUI and Framer Motion page-transition animations.\nFeatures interactive components, mobile-friendly layouts, and fast performance.\nQuikKart\nMERN-based instant-grocery app with categories, cart flow, and authentication.\nImplemented secure login, session handling, and smooth cart-to-checkout UX.\nBuilt optimized, responsive UI with fast loading and animations.\nPROJECTS\nUbiquity Sinha Ray\nSKILLS\nLanguages: Java, JavaScript, Python(Basic)\nFrontEnd Development: React.js, HTML, CSS, Bootstrap, Tailwind, Material-UI, Framer Motion\nBackend Development: Node.js, Express.js , RESTfulAPI\nDatabase: MongoDB\nOthers: Github\nTools & Libraries: PostMan,Chart.js, Web Scraping, Axios\nCERTIFICATES\nTCS iON Career Edge - TCS\nWeb Design and Development - Skill India Digital Hub\nFundamentals of Digital Marketing - Google\nData Science - TRYST, IIT Delhi\nAzure Data Fundamentals - Microsoft\nEDUCATION\nDelhi Technical Campus (GGSIPU)| 2023-2027 \nBachelor of Technology | CGPA:  9.38(current sem)\nDAV MODEL School | 2022-2023 \nHigher Secondary | Percentage: 90%\nDAV MODEL School | 2020-2021\nSecondary | Percentage: 97.4%\nHACKATHONS\nSmart India Hackathon(SIH) (Internal) - Constitution in a simple way\nHacktoberfest(Level 4)- Successfully merged 4 PRs\nCode4Cause - HackWithIndia\nHackTheMountain 5.0\nGFG",
+      "createdAt": "2026-01-13T13:24:32.948Z",
+      "updatedAt": "2026-01-13T13:24:32.948Z"
+    }
+  ]
+}
