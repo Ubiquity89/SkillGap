@@ -1,7 +1,6 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/apiConfig';
 import { auth } from '../firebase';
-
-const API_BASE_URL = 'http://localhost:5000/api';
 
 export interface FileProcessResponse {
   success: boolean;

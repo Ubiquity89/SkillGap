@@ -1,8 +1,7 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/apiConfig';
 import { auth } from '../firebase';
 import { Skill } from '../types';
-
-const API_BASE_URL = 'http://localhost:5000/api';
 
 export interface JobResponse {
   success: boolean;
