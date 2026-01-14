@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Recent Analysis Table Horizontal Scroll */
+.recent-analysis-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.recent-analysis-table {
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+/* Sticky Resume Column */
+.recent-analysis-table th:first-child,
+.recent-analysis-table td:first-child {
+  position: sticky;
+  left: 0;
+  background: white;
+  z-index: 2;
+}
+
+.recent-analysis-table th:first-child {
+  background: #f9fafb;
+}
+
+/* Custom Scrollbar */
+.recent-analysis-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+
+.recent-analysis-wrapper::-webkit-scrollbar-thumb {
+  background: #d0d7ff;
+  border-radius: 4px;
+}
+
+.recent-analysis-wrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
