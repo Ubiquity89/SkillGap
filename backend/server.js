@@ -1,14 +1,13 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-// const mongoose = require("mongoose");
 
 // Initialize Express app
 const app = express();
 
 // Middleware
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003"],
+  origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "https://your-frontend-name.vercel.app", "https://skillgap-analyser.onrender.com"],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -34,6 +33,23 @@ app.get("/health", (req, res) => {
     success: true,
     message: "Server is running",
     timestamp: new Date().toISOString()
+  });
+});
+
+// Root route
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "SkillGap API is running",
+    version: "1.0.0",
+    endpoints: {
+      health: "/health",
+      auth: "/api/auth",
+      resumes: "/api/resumes",
+      files: "/api/files",
+      jobs: "/api/jobs",
+      analysis: "/api/analysis"
+    }
   });
 });
 
