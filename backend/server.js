@@ -6,12 +6,38 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "https://skill-gap-u6ft.vercel.app", "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app", "https://skillgap-analyser.onrender.com", "https://*.vercel.app"],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "http://localhost:3002",
+  "http://localhost:3003",
+  "https://skill-gap-u6ft.vercel.app",
+  "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app"
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // allow requests with no origin (like Postman, curl)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
+);
+
+// 🔥 REQUIRED for Firebase / Axios preflight
+app.options("*", cors());
+
+
+
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
