@@ -78,7 +78,7 @@ const Navbar: React.FC = () => {
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
               <Link to="/" className="text-xl font-bold text-primary-600">
-                SkillGap
+                SkillGap 📱
               </Link>
             </div>
             
