@@ -24,6 +24,12 @@ async function getPdfjs() {
 async function extractTextFromPDF(buffer) {
   try {
     console.log('📄 Starting PDF extraction with pdfjs-dist...');
+    console.log('📄 Buffer size:', buffer.length, 'bytes');
+    
+    // Check if buffer is valid
+    if (!buffer || buffer.length === 0) {
+      throw new Error('PDF buffer is empty or invalid');
+    }
     
     // Get pdfjs dynamically
     const pdfjsLib = await getPdfjs();
@@ -61,10 +67,16 @@ async function extractTextFromPDF(buffer) {
     }
 
     console.log(`✅ PDF extraction complete. Extracted ${fullText.length} characters`);
+    
+    if (!fullText || fullText.trim().length === 0) {
+      throw new Error('PDF appears to be empty or contains no extractable text');
+    }
+    
     return fullText.toLowerCase();
     
   } catch (error) {
     console.error('❌ PDF extraction failed:', error.message);
+    console.error('❌ Full error:', error);
     throw new Error(`PDF parsing failed: ${error.message}`);
   }
 }

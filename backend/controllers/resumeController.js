@@ -71,6 +71,13 @@ exports.uploadResume = async (req, res) => {
       const pdfBuffer = req.file.buffer;
       
       console.log('📄 Parsing PDF with new robust parser...');
+      console.log('📄 File info:', {
+        originalname: req.file.originalname,
+        mimetype: req.file.mimetype,
+        size: req.file.size,
+        bufferLength: pdfBuffer.length
+      });
+      
       const parsedResume = await parseResume(pdfBuffer);
       
       console.log('=== RESUME PARSING RESULTS ===');
@@ -158,10 +165,33 @@ exports.uploadResume = async (req, res) => {
       });
 
     } catch (parseError) {
-      console.error('PDF parsing error:', parseError);
+      console.error('❌ PDF parsing error details:', {
+        message: parseError.message,
+        stack: parseError.stack,
+        name: parseError.name
+      });
+      
+      // Check for common PDF issues
+      if (parseError.message.includes('empty') || parseError.message.includes('no extractable text')) {
+        console.error('❌ PDF appears to be empty or scanned image');
+        return res.status(400).json({
+          success: false,
+          message: "PDF appears to be empty or contains no extractable text. Please ensure your PDF is text-based and not scanned."
+        });
+      }
+      
+      if (parseError.message.includes('Invalid PDF')) {
+        console.error('❌ Invalid PDF format');
+        return res.status(400).json({
+          success: false,
+          message: "Invalid PDF format. Please upload a valid PDF file."
+        });
+      }
+      
       res.status(500).json({
         success: false,
-        message: "Failed to parse PDF file"
+        message: "Failed to parse PDF file",
+        error: parseError.message
       });
     }
 
