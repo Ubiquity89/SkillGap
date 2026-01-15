@@ -39,18 +39,6 @@ exports.saveUsers = saveUsers;
 
 exports.firebaseLogin = async (req, res) => {
   try {
-    // 🔥 ALWAYS SET CORS HEADERS FIRST
-    res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
-    res.header("Access-Control-Allow-Credentials", "true");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Content-Type, Authorization"
-    );
-    res.header(
-      "Access-Control-Allow-Methods",
-      "GET, POST, OPTIONS"
-    );
-
     console.log("=== AUTH REQUEST START ===");
 
     const { idToken, role = "candidate" } = req.body;
@@ -96,10 +84,6 @@ exports.firebaseLogin = async (req, res) => {
 
   } catch (err) {
     console.error("Firebase login error:", err);
-
-    // 🔥 CORS HEADERS EVEN ON ERROR
-    res.header("Access-Control-Allow-Origin", req.headers.origin || "*");
-    res.header("Access-Control-Allow-Credentials", "true");
 
     return res.status(401).json({
       success: false,
