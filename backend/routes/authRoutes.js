@@ -1,8 +1,14 @@
 const express = require("express");
-const { firebaseLogin } = require("../controllers/authController");
+const cors = require("cors");
 
 const router = express.Router();
 
-router.post("/firebase-login", firebaseLogin);
-
-module.exports = router;
+// 🔥 THIS IS THE FIX
+router.use(
+  cors({
+    origin: true,
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "OPTIONS"],
+  })
+);
