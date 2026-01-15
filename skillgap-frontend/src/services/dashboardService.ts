@@ -58,19 +58,19 @@ export const getDashboardData = async (): Promise<DashboardData> => {
     
     // Fetch resumes, jobs, and analyses
     const [resumesResponse, jobsResponse, analysesResponse] = await Promise.all([
-      axios.get(`${API_BASE_URL}/resumes`, {
+      axios.get(`${API_BASE_URL}/api/resumes`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       }),
-      axios.get(`${API_BASE_URL}/jobs`, {
+      axios.get(`${API_BASE_URL}/api/jobs`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
         }
       }),
-      axios.get(`${API_BASE_URL}/analysis`, {
+      axios.get(`${API_BASE_URL}/api/analysis`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
