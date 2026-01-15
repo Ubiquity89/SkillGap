@@ -5,103 +5,103 @@ const cors = require("cors");
 // Initialize Express app
 const app = express();
 
-// Middleware
-const allowedOrigins = [
-  "http://localhost:3000",
-  "http://localhost:3001",
-  "http://localhost:3002",
-  "http://localhost:3003",
-  "https://skill-gap-u6ft.vercel.app",
-  "https://skill-gap-u6ft-3gny97av9-ubiquity89s-projects.vercel.app",
-  "https://skill-gap-u6ft-qmuf7hhiy-ubiquity89s-projects.vercel.app",
-  "https://skill-gap-u6ft-git-main-ubiquity89s-projects.vercel.app"
-];
+/* =====================================================
+   CORS CONFIG (🔥 FIXED – DO NOT MODIFY)
+===================================================== */
+const corsOptions = {
+  origin: function (origin, callback) {
+    // Allow non-browser tools (Postman, curl)
+    if (!origin) return callback(null, true);
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      // allow requests with no origin (like Postman, curl)
-      if (!origin) return callback(null, true);
+    // Allow localhost
+    if (origin.startsWith("http://localhost")) {
+      return callback(null, true);
+    }
 
-      // Check if origin is in allowed list OR matches *.vercel.app pattern
-      if (allowedOrigins.includes(origin) || (origin && origin.endsWith('.vercel.app'))) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-  })
-);
+    // Allow your Vercel domains
+    if (
+      origin === "https://skill-gap-u6ft.vercel.app" ||
+      origin.endsWith(".vercel.app")
+    ) {
+      return callback(null, true);
+    }
 
-// 🔥 REQUIRED for Firebase / Axios preflight
-app.options("*", cors());
+    // Otherwise block
+    return callback(new Error("Not allowed by CORS"));
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
 
+// 🔥 MUST be before routes
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
-
+/* =====================================================
+   BODY PARSERS
+===================================================== */
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// Connect to MongoDB (temporarily disabled)
-// mongoose.connect(process.env.MONGODB_URI)
-// .then(() => console.log("MongoDB Connected"))
-// .catch(err => console.error("MongoDB Connection Error:", err));
-
-// Routes
+/* =====================================================
+   ROUTES
+===================================================== */
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/resumes", require("./routes/resumeRoutes"));
 app.use("/api/files", require("./routes/fileRoutes"));
 app.use("/api/jobs", require("./routes/jobRoutes"));
 app.use("/api/analysis", require("./routes/analysisRoutes"));
 
-// Health check endpoint
+/* =====================================================
+   HEALTH CHECK
+===================================================== */
 app.get("/health", (req, res) => {
   res.status(200).json({
     success: true,
     message: "Server is running",
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
   });
 });
 
-// Root route
+/* =====================================================
+   ROOT
+===================================================== */
 app.get("/", (req, res) => {
   res.status(200).json({
     success: true,
     message: "SkillGap API is running",
     version: "1.0.0",
-    endpoints: {
-      health: "/health",
-      auth: "/api/auth",
-      resumes: "/api/resumes",
-      files: "/api/files",
-      jobs: "/api/jobs",
-      analysis: "/api/analysis"
-    }
   });
 });
 
-// Error handling middleware
+/* =====================================================
+   ERROR HANDLING
+===================================================== */
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error("❌ Error:", err.message);
   res.status(500).json({
     success: false,
-    message: "Something went wrong!"
+    message: err.message || "Internal Server Error",
   });
 });
 
-// 404 handler
+/* =====================================================
+   404 HANDLER
+===================================================== */
 app.use((req, res) => {
   res.status(404).json({
     success: false,
-    message: "Route not found"
+    message: "Route not found",
   });
 });
 
+/* =====================================================
+   START SERVER
+===================================================== */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
+  console.log(`🚀 Server running on port ${PORT}`);
+  console.log(`🌍 Environment: ${process.env.NODE_ENV || "development"}`);
 });
