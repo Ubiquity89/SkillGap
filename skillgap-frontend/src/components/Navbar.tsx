@@ -52,6 +52,12 @@ const Navbar: React.FC = () => {
     { name: 'Analysis', href: '/analysis', icon: ChartBarIcon },
   ];
 
+  const mobileNavigation = [
+    { name: 'Dashboard', href: '/dashboard', icon: ChartBarIcon },
+    { name: 'Upload Resume', href: '/resume-upload', icon: DocumentTextIcon },
+    { name: 'Job Descriptions', href: '/job-form', icon: BriefcaseIcon },
+  ];
+
   const isActive = (path: string) => location.pathname === path;
 
   const handleLogout = async () => {
@@ -77,7 +83,7 @@ const Navbar: React.FC = () => {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:ml-6 md:space-x-8 bg-blue-100 border-2 border-blue-500">
+            <div className="hidden md:flex md:ml-6 md:space-x-8">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -110,7 +116,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Hamburger Menu */}
-          <div className="md:hidden flex items-center bg-red-100 border-2 border-red-500">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="text-gray-500 hover:text-gray-700 p-2"
@@ -136,7 +142,7 @@ const Navbar: React.FC = () => {
             </div>
             
             <div className="p-4 space-y-4">
-              {navigation.map((item) => {
+              {mobileNavigation.map((item) => {
                 const Icon = item.icon;
                 return (
                   <Link
