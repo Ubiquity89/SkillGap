@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
             </div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex md:ml-6 md:space-x-8">
+            <div className="hidden md:flex md:ml-6 md:space-x-8 bg-blue-100 border-2 border-blue-500">
               {navigation.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Hamburger Menu */}
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center bg-red-100 border-2 border-red-500">
             <button
               onClick={() => setMobileMenuOpen(true)}
               className="text-gray-500 hover:text-gray-700 p-2"
