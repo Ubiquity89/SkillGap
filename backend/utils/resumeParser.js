@@ -36,7 +36,7 @@ async function extractTextFromPDF(buffer) {
     
     // Load PDF document
     const pdf = await pdfjsLib.getDocument({ 
-      data: buffer,
+      data: new Uint8Array(buffer), // Convert Buffer to Uint8Array
       useWorkerFetch: false,
       isEvalSupported: false,
       disableFontFace: true
