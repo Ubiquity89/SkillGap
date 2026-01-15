@@ -7,27 +7,32 @@ const app = express();
 /* =====================================================
    CORS CONFIG (Node 22 + Express 5 SAFE)
 ===================================================== */
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin) return callback(null, true);
+const allowedOrigins = [
+  "https://skill-gap-u6ft.vercel.app",
+];
 
-    if (
-      origin.startsWith("http://localhost") ||
-      origin === "https://skill-gap-u6ft.vercel.app" ||
-      origin.endsWith(".vercel.app")
-    ) {
-      return callback(null, true);
-    }
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true);
 
-    return callback(new Error("Not allowed by CORS"));
-  },
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
+      if (
+        allowedOrigins.includes(origin) ||
+        origin.endsWith(".vercel.app")
+      ) {
+        return callback(null, true);
+      }
 
-// ✅ THIS IS ENOUGH (handles OPTIONS automatically)
-app.use(cors(corsOptions));
+      callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+
+// THIS IS IMPORTANT FOR PREFLIGHT
+app.options("*", cors());
 
 /* =====================================================
    BODY PARSERS
