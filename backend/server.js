@@ -2,31 +2,23 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-// Initialize Express app
 const app = express();
 
 /* =====================================================
-   CORS CONFIG (🔥 FIXED – DO NOT MODIFY)
+   CORS CONFIG (Node 22 + Express 5 SAFE)
 ===================================================== */
 const corsOptions = {
   origin: function (origin, callback) {
-    // Allow non-browser tools (Postman, curl)
     if (!origin) return callback(null, true);
 
-    // Allow localhost
-    if (origin.startsWith("http://localhost")) {
-      return callback(null, true);
-    }
-
-    // Allow your Vercel domains
     if (
+      origin.startsWith("http://localhost") ||
       origin === "https://skill-gap-u6ft.vercel.app" ||
       origin.endsWith(".vercel.app")
     ) {
       return callback(null, true);
     }
 
-    // Otherwise block
     return callback(new Error("Not allowed by CORS"));
   },
   credentials: true,
@@ -34,9 +26,8 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
 };
 
-// 🔥 MUST be before routes
+// ✅ THIS IS ENOUGH (handles OPTIONS automatically)
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 
 /* =====================================================
    BODY PARSERS
@@ -54,10 +45,10 @@ app.use("/api/jobs", require("./routes/jobRoutes"));
 app.use("/api/analysis", require("./routes/analysisRoutes"));
 
 /* =====================================================
-   HEALTH CHECK
+   HEALTH
 ===================================================== */
 app.get("/health", (req, res) => {
-  res.status(200).json({
+  res.json({
     success: true,
     message: "Server is running",
     timestamp: new Date().toISOString(),
@@ -68,10 +59,9 @@ app.get("/health", (req, res) => {
    ROOT
 ===================================================== */
 app.get("/", (req, res) => {
-  res.status(200).json({
+  res.json({
     success: true,
     message: "SkillGap API is running",
-    version: "1.0.0",
   });
 });
 
@@ -87,7 +77,7 @@ app.use((err, req, res, next) => {
 });
 
 /* =====================================================
-   404 HANDLER
+   404
 ===================================================== */
 app.use((req, res) => {
   res.status(404).json({
@@ -97,11 +87,10 @@ app.use((req, res) => {
 });
 
 /* =====================================================
-   START SERVER
+   START
 ===================================================== */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`🌍 Environment: ${process.env.NODE_ENV || "development"}`);
 });
