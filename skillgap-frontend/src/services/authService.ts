@@ -54,7 +54,7 @@ export const loginWithGoogle = async () => {
 
     // Sync with backend - send token in Authorization header
     console.log('Sending token to backend...');
-    const response = await axios.post<AuthResponse>(`${API_BASE_URL}/api/auth/firebase-login`, 
+    const response = await axios.post<AuthResponse>(`${API_BASE_URL}/auth/firebase-login`, 
       { 
         idToken: token,
         role: 'candidate' // Default role for Google users
@@ -120,7 +120,7 @@ export const signup = async (email: string, password: string, role: 'candidate' 
     const token = await userCredential.user.getIdToken();
 
     // Sync with backend - send token in Authorization header
-    const response = await axios.post<AuthResponse>(`${API_BASE_URL}/api/auth/firebase-login`, 
+    const response = await axios.post<AuthResponse>(`${API_BASE_URL}/auth/firebase-login`, 
       { idToken: token, role }, 
       {
         headers: {
@@ -158,7 +158,7 @@ export const login = async (email: string, password: string) => {
     const token = await userCredential.user.getIdToken();
 
     // Sync with backend - send token in Authorization header
-    const response = await axios.post<AuthResponse>(`${API_BASE_URL}/api/auth/firebase-login`, 
+    const response = await axios.post<AuthResponse>(`${API_BASE_URL}/auth/firebase-login`, 
       { idToken: token }, 
       {
         headers: {
